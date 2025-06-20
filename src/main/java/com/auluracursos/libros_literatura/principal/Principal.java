@@ -70,7 +70,7 @@ public class Principal {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Por favor, ingrese un número válido.");
-                teclado.nextLine(); // Limpiar el buffer en caso de error
+                teclado.nextLine();
             }
         }
     }
@@ -98,12 +98,12 @@ public class Principal {
             Boolean vivo;
 
 
-            System.out.println("Buscando autor: " + nombreAutor); // Depuración
+            System.out.println("Buscando autor: " + nombreAutor);
             Autor autor = autorRepositorio.findByNombreIgnoreCase(nombreAutor).orElse(null);
 
             Libro lib = new Libro(libroBuscado.get().titulo(), autor, lang, libroBuscado.get().numeroDeDescargas());
             System.out.println(lib);
-             //Si el autor no se encuentra, puedes crear uno nuevo o manejarlo de otra manera
+             //Si el autor no se encuentra
             if (autor == null) {
                 System.out.println("Autor no encontrado para el libro: " + libroBuscado.get().titulo());
                 if(fechaMuerte == null){
@@ -182,7 +182,7 @@ public class Principal {
         } else {
             System.out.println("Autores Vivos en el año " + anio + ":");
             for (Autor autor : autoresVivos) {
-                System.out.println(autor); // Asegúrate de que la clase Autor tenga un método toString() adecuado
+                System.out.println(autor);
             }
         }
     }

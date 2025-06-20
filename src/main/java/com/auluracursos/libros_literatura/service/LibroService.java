@@ -19,7 +19,7 @@ public class LibroService {
     private AutorRepository autorRepository;
 
     public List<Libro> obtenerLibrosPorIdioma(String idioma) {
-        return libroRepository.findByIdiomasContaining(idioma); // Asegúrate de que este método esté definido
+        return libroRepository.findByIdiomasContaining(idioma);
     }
 
     public List<Autor> obtenerAutoresVivosEnAnio(int anio) {

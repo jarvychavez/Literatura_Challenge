@@ -21,7 +21,7 @@ public class Autor {
     private String fechaDeNacimiento;
     private String fechaDeMuerte;
 
-    @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, fetch = FetchType.EAGER) // Cambiado a "autor"
+    @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Libro> libros = new ArrayList<>();
 
     // Constructor vacío
