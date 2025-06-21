@@ -175,7 +175,7 @@ public class Principal {
         int anio = teclado.nextInt();
         teclado.nextLine();
 
-        List<Autor> autoresVivos = autorRepositorio.findAutoresVivosEnAnio(anio); // Método en el repositorio
+        List<Autor> autoresVivos = autorRepositorio.findAutoresVivosEnAnio(String.valueOf(anio)); // Método en el repositorio
 
         if (autoresVivos.isEmpty()) {
             System.out.println("No hay autores vivos en el año " + anio + ".");

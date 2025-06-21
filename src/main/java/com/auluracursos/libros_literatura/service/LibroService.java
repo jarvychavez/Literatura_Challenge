@@ -7,6 +7,7 @@ import com.auluracursos.libros_literatura.repository.LibroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.Year;
 import java.util.List;
 
 @Service
@@ -22,7 +23,7 @@ public class LibroService {
         return libroRepository.findByIdiomasContaining(idioma);
     }
 
-    public List<Autor> obtenerAutoresVivosEnAnio(int anio) {
+    public List<Autor> obtenerAutoresVivosEnAnio(String anio) {
         return autorRepository.findAutoresVivosEnAnio(anio);
     }
 

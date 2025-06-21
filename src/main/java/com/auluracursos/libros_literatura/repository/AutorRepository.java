@@ -13,6 +13,6 @@ import java.util.Optional;
 public interface AutorRepository extends JpaRepository<Autor, Long> {
     Optional<Autor> findByNombreIgnoreCase(String nombre);
 
-    @Query(value = "SELECT * FROM autores WHERE ?::date BETWEEN fecha_de_nacimiento AND COALESCE(fecha_de_muerte, CURRENT_DATE)", nativeQuery = true)
-    List<Autor> findAutoresVivosEnAnio(int anio);
+    @Query(value = "SELECT * FROM autores WHERE :anio BETWEEN fecha_de_nacimiento AND fecha_de_muerte", nativeQuery = true)
+    List<Autor> findAutoresVivosEnAnio(String anio);
 }
